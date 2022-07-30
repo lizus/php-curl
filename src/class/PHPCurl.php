@@ -63,7 +63,9 @@ class PHPCurl
    */
   public function set_options($args=[]){
     if (\is_array($args) && \count($args)>0) {
-      $this->options=\array_merge($this->options,$args);
+      foreach ($args as $key=>$value) {
+        $this->options[$key]=$value;
+      }
     }
   }
 
